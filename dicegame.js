@@ -1,4 +1,5 @@
 "use strict";
+
 /*
 // two player game
 // display rules
@@ -108,7 +109,7 @@ game.runGame();*/
 
 
 
-
+/*
 class Player {
     constructor() {
       //name, score, list of available gestures.
@@ -118,7 +119,7 @@ class Player {
 
     }
     chooseGesture(){
-      console.log("error override this method")
+      console.log("error override this method");
     }
 }
 class Human extends Player {
@@ -137,39 +138,50 @@ class AI extends Player {
       super();
   
   }
-  chooseGesture(){
-    
+
+
+  chooseGesture() {
+   
     let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-    let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
-    console.log(randomEvent);
+    let randomEvent = heroes[(Math.floor(Math.random() * (heroes.length)) + 1)];
+  
+    if(randomEvent = 1 === [heroes[0]]){
+      }  
+      else if(randomEvent = 2 === [heroes[1]]){
 
+      }
+      else if(randomEvent = 3 === [heroes[2]]){
 
+      }
+      else if(randomEvent = 4 === [heroes[3]]){
+
+      }
+      else if(randomEvent = 5 === [heroes[4]]){
+
+      }
+      console.log([heroes]);
     
-    
-    //use random/floor to choose gesture
-  } // another method to choose name
-  chooseName(){
-
-    this.name = "Kit";
-    this.name = "Hal";
-
-    let nameAIOne = prompt("Do you want Kit to be your opponent?  yes or no?");
-    let nameAITwo = prompt("Do you want Hal to be your opponent?  yes or no?");
-
-    switch(nameAIOne){
-      case 'yes':
-        this.name = "Kit";
-        
-
+      //return heroes[(Math.floor(Math.random() * (heroes.length)) + 1)];
 
     }
-
-
-
-
-
-  }
 }
+    //use random/floor to choose gesture
+  // another method to choose name
+  //chooseName()
+
+  //  this.name = "Kit";
+  //  this.name = "Hal";
+
+  //  let nameAIOne = prompt("Do you want Kit to be your opponent?  yes or no?");
+  //  let nameAITwo = prompt("Do you want Hal to be your opponent?  yes or no?");
+
+  //  switch(nameAIOne){
+  //    case 'yes':
+  //      this.name = "Kit";
+
+
+
+
 
 class Game {
   constructor() {
@@ -185,12 +197,15 @@ class Game {
   
 
   }
-  gameRun()
+  gameRun(){
+
+    
+  }
     //loop to give main game logic
 }
 // human and AI should have the same methods
 
-class Hands {
+/*class Hands {
   constructor() {
     this.contestantOne = new Fellows(name);
     this.contestantTwo = new Fellows(name);
@@ -204,39 +219,36 @@ class Hands {
   let paper = new ProbabilityCalculator(win);
   let lizard = new ProbabilityCalculator(win);
   let spock = new ProbabilityCalculator(win);
-  
+  */
 
 
-  this.result.push()
+ // this.result.push()
   
-  while(this.contestantOne.score < 3 && this.contestantTwo.score < 3 || this.contestantOne.score < 3 && this.computerOne.score < 3 || this.computerOne.score < 3 && this.computerTwo.score < 3){
+ // while(this.contestantOne.score < 3 && this.contestantTwo.score < 3 || this.contestantOne.score < 3 && this.computerOne.score < 3 || this.computerOne.score < 3 && this.computerTwo.score < 3){
     //change this while loop into several while loops in sequence.
-  }
+ // }
 
 
   
   
-  }
-}
 
 
-class Fellows {
+
+/*class Fellows {
   constructor(name) {
     this.score = 0;
     this.name = name;
+*/  
+//  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
   
-  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+
+
+//class ProbabilityCalculator {
+//  constructor(randomEvent) {
+//    this.randomEvent = randomEvent;
   
-  }
 
-}
-
-class ProbabilityCalculator {
-  constructor(randomEvent) {
-    this.randomEvent = randomEvent;
-  }
-
-  getRandomEvent() {
+  /*getRandomEvent() {
     let choices = prompt("1: Hit him high, 2: Run, 3: Strike him hard, 4: Lurch forward, 5 Do nothing.")
       switch(choices){
         case "1":
@@ -248,17 +260,17 @@ class ProbabilityCalculator {
     
     let getRandomInteger = Math.floor(Math.random() * randomEvent) + 1;
     let winner = heroes[i] * getRandomInteger;
-
+      */
     
-    }
+  
 
-  }
-  function choices(heroes){
-  }
 
-  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-  let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
-  console.log(randomEvent);
+  //function choices(heroes){
+  //}
+
+  //let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+  //let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
+  //console.log(randomEvent);
   
  // function choice(cities)
  // {
@@ -311,3 +323,87 @@ Lizard eats Paper
 Paper disproves Spock
 Spock vaporizes Rock
 https://www.youtube.com/watch?v=cSLeBKT7-sM  */
+
+
+
+class Player {
+  constructor() {
+    //name, score, list of available gestures.
+    this.score = 0;
+    this.name = null;
+    this.gesture = null;
+
+  }
+  chooseGesture(){
+    console.log("error override this method");
+  }
+}
+
+
+class Human extends Player {
+  constructor() {
+  super();
+
+}
+chooseGesture(){
+//get user input to choose gesture
+//store choice to this.gesture
+}
+}
+
+
+
+
+
+
+
+class AI extends Player {
+  constructor() {
+  super();
+
+}
+
+
+
+
+
+chooseGesture(){ 
+   
+  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+  let randomEvent = heroes[(Math.floor(Math.random() * (heroes.length)))];
+
+  for(let i = 0; i < heroes.length; i++){
+
+    if(randomEvent = [i]){
+
+    }
+    console.log(heroes[i]);
+  }
+}
+
+rulesOfTheGame(){
+
+console.log("Will this print and if it doesn't why isn't displaying on the console?");
+}
+
+
+
+
+
+  /* if(randomEvent = 1 === [heroes[0]]){
+    }  
+    else if(randomEvent = 2 === [heroes[1]]){
+
+    }
+    else if(randomEvent = 3 === [heroes[2]]){
+
+    }
+    else if(randomEvent = 4 === [heroes[3]]){
+
+    }
+    else if(randomEvent = 5 === [heroes[4]]){
+
+    }
+    console.log([heroes]);*/
+
+}
