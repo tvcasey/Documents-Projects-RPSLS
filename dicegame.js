@@ -1,5 +1,5 @@
 "use strict";
-
+/*
 // two player game
 // display rules
 // players roll all 6 dice and add up their score
@@ -101,4 +101,213 @@ class Die {
 ////////////////////////////
 
 let game = new Game();
-game.runGame();
+game.runGame();*/
+
+
+//  Create the classes for RPSLS:  Players, Probablity Calculator, Game
+
+
+
+
+class Player {
+    constructor() {
+      //name, score, list of available gestures.
+      this.score = 0;
+      this.name = null;
+      this.gesture = null;
+
+    }
+    chooseGesture(){
+      console.log("error override this method")
+    }
+}
+class Human extends Player {
+      constructor() {
+      super();
+    
+  }
+  chooseGesture(){
+    //get user input to choose gesture
+    //store choice to this.gesture
+  }
+}
+
+class AI extends Player {
+      constructor() {
+      super();
+  
+  }
+  chooseGesture(){
+    
+    let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+    let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
+    console.log(randomEvent);
+
+
+    
+    
+    //use random/floor to choose gesture
+  } // another method to choose name
+  chooseName(){
+
+    this.name = "Kit";
+    this.name = "Hal";
+
+    let nameAIOne = prompt("Do you want Kit to be your opponent?  yes or no?");
+    let nameAITwo = prompt("Do you want Hal to be your opponent?  yes or no?");
+
+    switch(nameAIOne){
+      case 'yes':
+        this.name = "Kit";
+        
+
+
+    }
+
+
+
+
+
+  }
+}
+
+class Game {
+  constructor() {
+    this.playerOne = null;
+    this.playerTwo = null;
+
+
+  }
+  gameSetup() {
+    //setup choose AI/Human for player one or two.  Putting names to the players.
+    //put a prompt for the names.  Prompt for the types.  AI or Human.
+
+  
+
+  }
+  gameRun()
+    //loop to give main game logic
+}
+// human and AI should have the same methods
+
+class Hands {
+  constructor() {
+    this.contestantOne = new Fellows(name);
+    this.contestantTwo = new Fellows(name);
+    this.computerOne = new Fellows("Hal");
+    this.computerTwo = new Fellows("Kit");
+  
+  this.result = [];
+  let win = this.contestantOne > this.contestantTwo || this.contestantTwo > this.contestantOne || this.computerOne > this.computerTwo || this.computerTwo > this.computerOne; 
+  let rock = new ProbabilityCalculator(win);
+  let scissors = new ProbabilityCalculator(win);
+  let paper = new ProbabilityCalculator(win);
+  let lizard = new ProbabilityCalculator(win);
+  let spock = new ProbabilityCalculator(win);
+  
+
+
+  this.result.push()
+  
+  while(this.contestantOne.score < 3 && this.contestantTwo.score < 3 || this.contestantOne.score < 3 && this.computerOne.score < 3 || this.computerOne.score < 3 && this.computerTwo.score < 3){
+    //change this while loop into several while loops in sequence.
+  }
+
+
+  
+  
+  }
+}
+
+
+class Fellows {
+  constructor(name) {
+    this.score = 0;
+    this.name = name;
+  
+  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+  
+  }
+
+}
+
+class ProbabilityCalculator {
+  constructor(randomEvent) {
+    this.randomEvent = randomEvent;
+  }
+
+  getRandomEvent() {
+    let choices = prompt("1: Hit him high, 2: Run, 3: Strike him hard, 4: Lurch forward, 5 Do nothing.")
+      switch(choices){
+        case "1":
+          let randomEvent = Math.random(heroes[0], heroes[1], heroes[2], heroes[3], heroes[4]);
+          console.log(randomEvent);
+        break;
+        default:
+      } return this.randomEvent;
+    
+    let getRandomInteger = Math.floor(Math.random() * randomEvent) + 1;
+    let winner = heroes[i] * getRandomInteger;
+
+    
+    }
+
+  }
+  function choices(heroes){
+  }
+
+  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
+  let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
+  console.log(randomEvent);
+  
+ // function choice(cities)
+ // {
+ // return cities[Math.floor(Math.random() * cities.length)];
+     
+ // }
+ //    let cities = ["Paris", "London", "Rome", "Berlin", "Madrid", "Athens", "Budapest", "Moscow", "Zurich"];
+ //     console.log(choice(cities));
+
+
+
+    // put in an array not based on dice buy based on probability.
+    // let = ["rock","scissors","paper","lizard","spock"];
+    // have a while loop choose [i] by random based on mathfloor.random.to the
+    // array.  See if this is possible.  Once you get the random number you
+    // floor it and choose the right [i].  Remember I can always use the
+    // dice method.  You compare the results to the integer of the array.
+    // Once you get that you have a comparison to the opponents choice and find 
+    // who the winner is.  Use a while loop to see if the game should go on.
+  
+
+
+
+/*RPSLS User Stories
+Out of 65 points
+Using the concepts of OOP by creating classes and using objects (instances of those classes) to interact
+with each other, create a console version of the classic game Rock Paper Scissors Lizard Spock.
+User stories:
+(5 points): As a developer, I want to make good, consistent commits.
+(15 points): As a developer, I want to find a way to properly incorporate inheritance into my game.
+(5 points): As a developer, I want to account for and handle bad user input, ensuring that any user input
+is validated and reobtained if necessary.
+(10 points): As a developer, I want to store all of the gesture options/choices in an array. I want to find a
+way to utilize the array of gestures within my code (display gesture options, assign player a
+gesture, etc).
+(10 points): As a player, I want the correct player to win a given round based on the choices* made by
+each player.
+(10 points): As a player, I want the game of RPSLS to be at minimum a ‘best of three’ to decide a
+winner.
+(10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs
+human) game.
+* Rock crushes Scissors
+Scissors cuts Paper
+Paper covers Rock
+Rock crushes Lizard
+Lizard poisons Spock
+Spock smashes Scissors
+Scissors decapitates Lizard
+Lizard eats Paper
+Paper disproves Spock
+Spock vaporizes Rock
+https://www.youtube.com/watch?v=cSLeBKT7-sM  */
