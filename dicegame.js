@@ -293,9 +293,11 @@ class AI extends Player {
 
 class Games {
   constructor() {
-    this.playerOne = null;
-    this.playerTwo = null;
-
+    this.playerOne = "Kitt";
+    this.playerTwo = "Hal";
+    this.playerThree = null;
+    this.playerFour = null;
+    this.gesture = 0;
   }
   runGame() {
     //primary workflow.  Game setup and make a loop after set up the game make the logic to run the game.
@@ -303,13 +305,53 @@ class Games {
     console.log("Hello World!");
     this.gamesSetup();
     this.chooseName();
-    this.playerOne.chooseGesture();
-    this.playerTwo.chooseGesture();
-    //console.log(this.playerOne.gesture);
+    this.playerThree.chooseGesture();
+    this.playerFour.chooseGesture();
+   // this.gesture.chooseGesture();
+   // this.gesture.chooseGesture();
+   // this.gesture.chooseGesture();
+    this.gesture.compareGestures();
+  //  console.log(this.playerOne.gesture);
   }
   compareGestures() {
     //compare gestures *this.playerOne.gesture * this.playerTwo.gesture
+    let rockWinsOne = ["Rock"] > ["Scissors"];
+    let rockWinsTwo = ["Rock"] > ["Lizard"];
+    let paperWinsOne = ["Paper"] > ["Rock"];
+    let paperWinsTwo = ["Paper"] > ["Spock"];
+    let scissorsWinsOne = ["Scissors"] > ["Paper"];
+    let scissorsWinsTwo = ["Scissors"] > ["Lizard"];
+    let lizardWinsOne = ["Lizard"] > ["Spock"];
+    let lizardWinsTwo = ["Lizard"] > ["Paper"];
+    let spockWinsOne = ["Spock"] > ["Scissors"];
+    let spockWinsTwo = ["Spock"] > ["Rock"];
 
+    if(gesture > gesture === rockWinsOne || rockWinsTwo){
+
+    console.log("Rock takes the match.");
+
+    }
+    else if(gesture > gesture === paperWinsOne || paperWinsTwo){
+
+    
+      console.log("Paper crumbles the opponent.");
+
+  }
+    else if(gesture > gesture === scissorsWinsOne || scissorsWinsTwo){
+
+    
+      console.log("Scissors stabs and wins.");
+    }
+    else if(gesture > gesture === lizardWinsOne || lizardWinsTwo){
+
+    
+      console.log("Lizard chews them up.");
+    }
+    else if(gesture > gesture === spockWinsOne || spockWinsTwo){
+
+    
+      console.log("Spock uses his ears to spike it.");
+    }
 
 
   }
@@ -338,37 +380,49 @@ class Games {
 
     switch (choosePlayersOne) {
       case "yes":
-        console.log(playerThree);
-        console.log(playerFour);
+        console.log("Player One's Name: ", playerThree);
+        console.log("Player Two's Name: ", playerFour);
         // this.playerThree
         break;
       case "no":
+
+
         break;
       default:
-    }
-    let choosePlayersTwo = prompt("Do you want to watch Kit and Hal to play? yes or no?");
-    let playerOne = prompt("Do you want Kit to play? yes or no?"); //look at most wanted
-
-    switch (choosePlayersTwo) {
-      case "yes":
-        console.log(playerOne);
         break;
-      case "no":
-        let playerTwo = prompt("Do you want Hal to play? yes or no?");
-        break;
-      default:
-    }
-    let choosePlayersThree = prompt("Do you want a human versus computer game?");
 
+    }
+    let choosePlayersThree = prompt("Do you want a human versus computer game? yes or no?");
+
+    let playerOne = "Kitt";
     switch (choosePlayersThree) {
       case "yes":
-        console.log(playerThree);
-        console.log(playerOne);
+        let playerThree = prompt("Please enter your name as the first player.");
+        console.log("Player One's Name: ", playerThree);
+        console.log("The fast and furious Nightrider: ", playerOne);
         break;
       case "no":
         break;
       default:
+        break;
     }
+
+    let choosePlayersTwo = prompt("Do you want to watch Kit and Hal to play? yes or no?");
+
+      switch (choosePlayersTwo) {
+      case "yes":
+        let playerOne = "Kitt";
+        let playerTwo = "Hal";
+        console.log("Nightrider's ", playerOne);
+        console.log("2001 Space's Indomitable Compter: ", playerTwo);
+        break;
+      case "no":
+        break;
+      default:
+        break;
+    }
+
+    
 
 
   }
