@@ -1,6 +1,6 @@
 "use strict";
 
-/*
+
 // two player game
 // display rules
 // players roll all 6 dice and add up their score
@@ -28,15 +28,15 @@ class Game {
   runGame() {  // "main" method
     this.displayRules();
 
-    while(this.playerOne.score < 3 && this.playerTwo.score < 3) {
+    while (this.playerOne.score < 3 && this.playerTwo.score < 3) {
       let playerOneTotal = this.playerOne.rollAllDice(this.dice);
       let playerTwoTotal = this.playerTwo.rollAllDice(this.dice);
 
-      if(playerOneTotal > playerTwoTotal) {
+      if (playerOneTotal > playerTwoTotal) {
         console.log(this.playerOne.name + " wins this round!");
         this.playerOne.score++;
       }
-      else if(playerTwoTotal > playerOneTotal) {
+      else if (playerTwoTotal > playerOneTotal) {
         console.log(this.playerTwo.name + " wins this round!");
         this.playerTwo.score++;
       }
@@ -44,7 +44,7 @@ class Game {
         console.log("Wow! You managed to tie after each rolling " + this.dice.length + " dice!");
       }
     }
-    
+
     this.displayGameWinner();
   }
 
@@ -56,7 +56,7 @@ class Game {
   }
 
   displayGameWinner() {
-    if(this.playerOne.score > this.playerTwo.score) {
+    if (this.playerOne.score > this.playerTwo.score) {
       console.log(this.playerOne.name + " wins this game!");
     }
     else {
@@ -79,7 +79,7 @@ class Player {
   rollAllDice(diceArray) {
     let runningTotal = 0;
 
-    for(let i = 0; i < diceArray.length; i++) {
+    for (let i = 0; i < diceArray.length; i++) {
       let result = this.rollDie(diceArray[i]);
       runningTotal += result;
     }
@@ -101,8 +101,8 @@ class Die {
 
 ////////////////////////////
 
-let game = new Game();
-game.runGame();*/
+//let game = new Game();
+//game.runGame();
 
 
 //  Create the classes for RPSLS:  Players, Probablity Calculator, Game
@@ -142,44 +142,13 @@ class AI extends Player {
 
   chooseGesture() {
    
-    let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-    let randomEvent = heroes[(Math.floor(Math.random() * (heroes.length)) + 1)];
-  
-    if(randomEvent = 1 === [heroes[0]]){
-      }  
-      else if(randomEvent = 2 === [heroes[1]]){
 
-      }
-      else if(randomEvent = 3 === [heroes[2]]){
-
-      }
-      else if(randomEvent = 4 === [heroes[3]]){
-
-      }
-      else if(randomEvent = 5 === [heroes[4]]){
-
-      }
-      console.log([heroes]);
-    
-      //return heroes[(Math.floor(Math.random() * (heroes.length)) + 1)];
-
-    }
-}
-    //use random/floor to choose gesture
+  //use random/floor to choose gesture
   // another method to choose name
+  
+  
+  
   //chooseName()
-
-  //  this.name = "Kit";
-  //  this.name = "Hal";
-
-  //  let nameAIOne = prompt("Do you want Kit to be your opponent?  yes or no?");
-  //  let nameAITwo = prompt("Do you want Hal to be your opponent?  yes or no?");
-
-  //  switch(nameAIOne){
-  //    case 'yes':
-  //      this.name = "Kit";
-
-
 
 
 
@@ -194,39 +163,9 @@ class Game {
     //setup choose AI/Human for player one or two.  Putting names to the players.
     //put a prompt for the names.  Prompt for the types.  AI or Human.
 
-  
 
-  }
-  gameRun(){
+ 
 
-    
-  }
-    //loop to give main game logic
-}
-// human and AI should have the same methods
-
-/*class Hands {
-  constructor() {
-    this.contestantOne = new Fellows(name);
-    this.contestantTwo = new Fellows(name);
-    this.computerOne = new Fellows("Hal");
-    this.computerTwo = new Fellows("Kit");
-  
-  this.result = [];
-  let win = this.contestantOne > this.contestantTwo || this.contestantTwo > this.contestantOne || this.computerOne > this.computerTwo || this.computerTwo > this.computerOne; 
-  let rock = new ProbabilityCalculator(win);
-  let scissors = new ProbabilityCalculator(win);
-  let paper = new ProbabilityCalculator(win);
-  let lizard = new ProbabilityCalculator(win);
-  let spock = new ProbabilityCalculator(win);
-  */
-
-
- // this.result.push()
-  
- // while(this.contestantOne.score < 3 && this.contestantTwo.score < 3 || this.contestantOne.score < 3 && this.computerOne.score < 3 || this.computerOne.score < 3 && this.computerTwo.score < 3){
-    //change this while loop into several while loops in sequence.
- // }
 
 
   
@@ -234,43 +173,7 @@ class Game {
 
 
 
-/*class Fellows {
-  constructor(name) {
-    this.score = 0;
-    this.name = name;
-*/  
-//  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-  
 
-
-//class ProbabilityCalculator {
-//  constructor(randomEvent) {
-//    this.randomEvent = randomEvent;
-  
-
-  /*getRandomEvent() {
-    let choices = prompt("1: Hit him high, 2: Run, 3: Strike him hard, 4: Lurch forward, 5 Do nothing.")
-      switch(choices){
-        case "1":
-          let randomEvent = Math.random(heroes[0], heroes[1], heroes[2], heroes[3], heroes[4]);
-          console.log(randomEvent);
-        break;
-        default:
-      } return this.randomEvent;
-    
-    let getRandomInteger = Math.floor(Math.random() * randomEvent) + 1;
-    let winner = heroes[i] * getRandomInteger;
-      */
-    
-  
-
-
-  //function choices(heroes){
-  //}
-
-  //let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-  //let randomEvent = [(Math.floor(Math.random() * (heroes.length)) + 1)];
-  //console.log(randomEvent);
   
  // function choice(cities)
  // {
@@ -326,7 +229,7 @@ https://www.youtube.com/watch?v=cSLeBKT7-sM  */
 
 
 
-class Player {
+class Players {
   constructor() {
     //name, score, list of available gestures.
     this.score = 0;
@@ -334,7 +237,7 @@ class Player {
     this.gesture = null;
 
   }
-  chooseGesture(){
+  chooseGesture() {
     console.log("error override this method");
   }
 }
@@ -342,56 +245,159 @@ class Player {
 
 class Human extends Player {
   constructor() {
-  super();
+    super();
 
+  }
+  chooseGesture() {
+
+    let heroes = ["Rock", "Scissors", "Paper", "Lizard", "Spock"];
+    let randomEvent = [(Math.floor(Math.random() * (heroes.length)))];
+
+
+    console.log(heroes[randomEvent]);
+
+    //return heroes[randomEvent];
+    this.gesture = heroes[randomEvent];
+  }
 }
-chooseGesture(){
-//get user input to choose gesture
-//store choice to this.gesture
-}
-}
-
-
-
-
-
 
 
 class AI extends Player {
   constructor() {
-  super();
+    super();
 
-}
-
-
-
-
-
-chooseGesture(){ 
-   
-  let heroes = ["Rock","Scissors","Paper","Lizard","Spock"];
-  let randomEvent = heroes[(Math.floor(Math.random() * (heroes.length)))];
-
-  for(let i = 0; i < heroes.length; i++){
-
-    if(randomEvent = [i]){
-
-    }
-    console.log(heroes[i]);
   }
+  chooseGesture() {
+
+    let heroes = ["Rock", "Scissors", "Paper", "Lizard", "Spock"];
+    let randomEvent = [(Math.floor(Math.random() * (heroes.length)))];
+
+
+    console.log(heroes[randomEvent]);
+
+    //return heroes[randomEvent];
+    this.gesture = heroes[randomEvent];
+  }
+
+  rulesOfTheGame() {
+
+    console.log("Will this print and if it doesn't why isn't displaying on the console?");
+  }
+
+  // another method to choose name
+
+
+
+
 }
 
-rulesOfTheGame(){
+class Games {
+  constructor() {
+    this.playerOne = null;
+    this.playerTwo = null;
 
-console.log("Will this print and if it doesn't why isn't displaying on the console?");
+  }
+  runGame() {
+    //primary workflow.  Game setup and make a loop after set up the game make the logic to run the game.
+    //player roles and create a comparison class.
+    console.log("Hello World!");
+    this.gamesSetup();
+    this.chooseName();
+    this.playerOne.chooseGesture();
+    this.playerTwo.chooseGesture();
+    //console.log(this.playerOne.gesture);
+  }
+  compareGestures() {
+    //compare gestures *this.playerOne.gesture * this.playerTwo.gesture
+
+
+
+  }
+
+  gamesSetup() {
+    //setup choose AI/Human for player one or two.  Putting names to the players.
+    //put a prompt for the names.  Prompt for the types.  AI or Human.
+    this.playerOne = new AI();
+    this.playerTwo = new AI();
+    this.playerThree = new Human();
+    this.playerFour = new Human();
+
+
+  }
+
+  chooseName() {
+
+    let choosePlayersOne = prompt("Do you want to want two humans to play? yes or no?");
+
+
+
+    let playerThree = prompt("Please enter your name as the first player.");
+    let playerFour = prompt("Please enter your name as the second player.");
+
+
+
+    switch (choosePlayersOne) {
+      case "yes":
+        console.log(playerThree);
+        console.log(playerFour);
+        // this.playerThree
+        break;
+      case "no":
+        break;
+      default:
+    }
+    let choosePlayersTwo = prompt("Do you want to watch Kit and Hal to play? yes or no?");
+    let playerOne = prompt("Do you want Kit to play? yes or no?"); //look at most wanted
+
+    switch (choosePlayersTwo) {
+      case "yes":
+        console.log(playerOne);
+        break;
+      case "no":
+        let playerTwo = prompt("Do you want Hal to play? yes or no?");
+        break;
+      default:
+    }
+    let choosePlayersThree = prompt("Do you want a human versus computer game?");
+
+    switch (choosePlayersThree) {
+      case "yes":
+        console.log(playerThree);
+        console.log(playerOne);
+        break;
+      case "no":
+        break;
+      default:
+    }
+
+
+  }
+
+
+
+
+
 }
+  
+  
+  
+  
+
+
+
+  
+
+
+let game = new Games();
+game.runGame();
 
 
 
 
 
-  /* if(randomEvent = 1 === [heroes[0]]){
-    }  
+
+/* if(randomEvent = 1 === [heroes[0]]){
+    }
     else if(randomEvent = 2 === [heroes[1]]){
 
     }
@@ -406,4 +412,4 @@ console.log("Will this print and if it doesn't why isn't displaying on the conso
     }
     console.log([heroes]);*/
 
-}
+
