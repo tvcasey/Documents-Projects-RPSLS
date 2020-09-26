@@ -9,7 +9,7 @@
 // first to three
 
 // Player, Die, Game
-
+/*
 class Game {
   constructor() {
     this.playerOne = new Player("Mike");
@@ -98,7 +98,7 @@ class Die {
     return randomNumber;
   }
 }
-
+*/
 ////////////////////////////
 
 //let game = new Game();
@@ -229,23 +229,21 @@ https://www.youtube.com/watch?v=cSLeBKT7-sM  */
 
 
 
-class Players {
-  constructor() {
+class Player {
+  constructor(name) {
     //name, score, list of available gestures.
-    this.score = 0;
+    this.score = 1;
     this.name = null;
     this.gesture = null;
 
   }
-  chooseGesture() {
-    console.log("error override this method");
-  }
+
 }
 
 
 class Human extends Player {
-  constructor() {
-    super();
+  constructor(name) {
+    super(name);
 
   }
   chooseGesture() {
@@ -263,8 +261,8 @@ class Human extends Player {
 
 
 class AI extends Player {
-  constructor() {
-    super();
+  constructor(name) {
+    super(name);
 
   }
   chooseGesture() {
@@ -295,7 +293,6 @@ class Games {
   constructor() {
     this.playerOne = null;
     this.playerTwo = null;
-    this.gesture = 0;
   }
   runGame() {
     //primary workflow.  Game setup and make a loop after set up the game make the logic to run the game.
@@ -303,131 +300,91 @@ class Games {
     console.log("Hello World!");
     this.gamesSetup();
     this.chooseName();
+    do{
     this.playerOne.chooseGesture();
     this.playerTwo.chooseGesture();
-    // this.gesture.chooseGesture();
-    // this.gesture.chooseGesture();
-    // this.gesture.chooseGesture();
     this.compareGestures();
-    //  this.playerFour.compareGestures();
-    //  console.log(this.playerOne.gesture);
+    }
+    while (this.playerOne.score < 3 || this.playerTwo.score < 3); 
+
+    this.determineWinner();
   }
   compareGestures() {
-    //compare gestures *this.playerOne.gesture * this.playerTwo.gesture
-    //  let rockWinsOne = ["Rock"] > ["Scissors"];
-    //  let rockWinsTwo = ["Rock"] > ["Lizard"];
-    //  let paperWinsOne = ["Paper"] > ["Rock"];
-    //  let paperWinsTwo = ["Paper"] > ["Spock"];
-    //  let scissorsWinsOne = ["Scissors"] > ["Paper"];
-    //  let scissorsWinsTwo = ["Scissors"] > ["Lizard"];
-    //  let lizardWinsOne = ["Lizard"] > ["Spock"];
-    //  let lizardWinsTwo = ["Lizard"] > ["Paper"];
-    //  let spockWinsOne = ["Spock"] > ["Scissors"];
-    //  let spockWinsTwo = ["Spock"] > ["Rock"];
-    let fluffy = [];
-    let counterPlayerOne = [] + 1;
-    fluffy += counterPlayerOne;
-    let furry = [];
-    let counterPlayerTwo = [] + 1;
-    furry += counterPlayerTwo;
 
-    if (this.playerOne.gesture == "Rock" && this.playerTwo.gesture == "Scissors") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Rock" && this.playerTwo.gesture == "Lizard") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Paper" && this.playerTwo.gesture == "Rock") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Paper" && this.playerTwo.gesture == "Spock") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Scissors" && this.playerTwo.gesture == "Paper") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Scissors" && this.playerTwo.gesture == "Lizard") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Lizard" && this.playerTwo.gesture == "Spock") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Lizard" && this.playerTwo.gesture == "Paper") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Spock" && this.playerTwo.gesture == "Scissors") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerOne.gesture == "Spock" && this.playerTwo.gesture == "Rock") {
-      console.log("Player one has won this round.", counterPlayerOne);
-    } else if (this.playerTwo.gesture == "Rock" && this.playerOne.gesture == "Scissors") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Rock" && this.playerOne.gesture == "Lizard") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Paper" && this.playerOne.gesture == "Rock") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Paper" && this.playerOne.gesture == "Spock") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Scissors" && this.playerOne.gesture == "Paper") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Scissors" && this.playerOne.gesture == "Lizard") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Lizard" && this.playerOne.gesture == "Spock") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Lizard" && this.playerOne.gesture == "Paper") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Spock" && this.playerOne.gesture == "Scissors") {
-      console.log("Player two has won this round.", counterPlayerTwo);
-    } else if (this.playerTwo.gesture == "Spock" && this.playerOne.gesture == "Rock") {
-      console.log("Player two has won this round.", counterPlayerTwo);
+    //    let fluffy = [];
+    //let counterPlayerOne = 0;
+    //    fluffy += counterPlayerOne;
+    //    let furry = [];
+    //let counterPlayerTwo = 0;
+    //    furry += counterPlayerTwo;
+    //this.score = [];
+
+    //    while(this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture && counterPlayerOne === 3 || counterPlayerTwo === 3){
+
     
-    } else if(this.playerOne.gesture === this.playerTwo.gesture && this.playerTwo.gesture === this.playerOne.gesture){
-      console.log("Tied gestures:  Choose again!");
-    
-    }
-    
-  }
-  determineWinner() {
 
 
-
-
-
-
-
-
-
-
-
-
-  }
-
-  
-
-
-    /*if(gesture > gesture === rockWinsOne || rockWinsTwo){
-    
-        console.log("Rock takes the match.");
-    
-        }
-        else if(gesture > gesture === paperWinsOne || paperWinsTwo){
-    
-        
-          console.log("Paper crumbles the opponent.");
-    
-      }
-        else if(gesture > gesture === scissorsWinsOne || scissorsWinsTwo){
-    
-        
-          console.log("Scissors stabs and wins.");
-        }
-        else if(gesture > gesture === lizardWinsOne || lizardWinsTwo){
-    
-        
-          console.log("Lizard chews them up.");
-        }
-        else if(gesture > gesture === spockWinsOne || spockWinsTwo){
-    
-        
-          console.log("Spock uses his ears to spike it.");
-        }*/
-    //  let heroes = ["Rock", "Scissors", "Paper", "Lizard", "Spock"];
-
-    //  for(let i = 0; i < heroes.length && [i] === playerThree; i++){
     //    }
 
-    //  If([playerThree] > [playerFour] === rockWinsOne || rockWinsTwo || paperWinsOne || paperWinsTwo || scissorsWinsOne || scissorsWinsTwo || lizardWinsOne || lizardWinsTwo || spockWinsOne || spockWinsTwo);{
+
+
+    if (this.playerOne.gesture == "Rock" && this.playerTwo.gesture == "Scissors") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Rock" && this.playerTwo.gesture == "Lizard") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Paper" && this.playerTwo.gesture == "Rock") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Paper" && this.playerTwo.gesture == "Spock") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Scissors" && this.playerTwo.gesture == "Paper") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Scissors" && this.playerTwo.gesture == "Lizard") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Lizard" && this.playerTwo.gesture == "Spock") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Lizard" && this.playerTwo.gesture == "Paper") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Spock" && this.playerTwo.gesture == "Scissors") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerOne.gesture == "Spock" && this.playerTwo.gesture == "Rock") {
+      console.log("Player one has won this round.", this.playerOne.score++);
+    } else if (this.playerTwo.gesture == "Rock" && this.playerOne.gesture == "Scissors") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Rock" && this.playerOne.gesture == "Lizard") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Paper" && this.playerOne.gesture == "Rock") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Paper" && this.playerOne.gesture == "Spock") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Scissors" && this.playerOne.gesture == "Paper") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Scissors" && this.playerOne.gesture == "Lizard") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Lizard" && this.playerOne.gesture == "Spock") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Lizard" && this.playerOne.gesture == "Paper") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Spock" && this.playerOne.gesture == "Scissors") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+    } else if (this.playerTwo.gesture == "Spock" && this.playerOne.gesture == "Rock") {
+      console.log("Player two has won this round.", this.playerTwo.score++);
+
+    } else if (this.playerOne.gesture === this.playerTwo.gesture) {
+      console.log("Tied gestures:  Choose again!");
+
+
+    }
+
+
+    //    let counterPlayerOne = this.playerOne.score;
+    //    let counterPlayerTwo = this.playerTwo.score;
+
+
+    //    counterPlayerOne = this.playerOne.score;
+    //    counterPlayerTwo = this.playerTwo.score;
+
+    //   console.log(this.playerOne.score);
+    //   console.log(this.playerTwo.score);
 
 
 
@@ -435,51 +392,85 @@ class Games {
 
 
 
-    //  console.log(playerThree + "wins this round!");
 
+
+
+  }
+
+
+
+
+
+
+
+  determineWinner() {
+
+    if(this.playerOne.score > this.playerTwo.score){
+      console.log("PLAYER ONE WINS THE MATCH.");
+    } else if(this.playerTwo.score > this.playerTwo.score) {
+      console.log("PLAYER TWO WINS THE MATCH.");
+    } else if(this.playerOne.score === this.playerTwo.score){
+      console.log("GAME TIED, PLEASE REFRESH AND TRY AGAIN.");
+    }
+    }
   
 
 
-  //If(playerFour > playerThree === rockWinsOne || rockWinsTwo || paperWinsOne || paperWinsTwo || scissorsWinsOne || scissorsWinsTwo || lizardWinsOne || lizardWinsTwo || spockWinsOne || spockWinsTwo);{
 
 
 
 
 
-  //  console.log(playerFour + "wins this round!");
 
-  //return this.playerThree + this.playerFour;
-  //}
+  //  while(this.playerOne.gesture < 3 && this.playerTwo.score < 3) {
 
 
+  //    }
+
+
+
+  /*while (this.playerOne.score < 3 && this.playerTwo.score < 3) {
+    let playerOneTotal = this.playerOne.rollAllDice(this.dice);
+    let playerTwoTotal = this.playerTwo.rollAllDice(this.dice);
+
+    if (playerOneTotal > playerTwoTotal) {
+      console.log(this.playerOne.name + " wins this round!");
+      this.playerOne.score++;
+    }
+    else if (playerTwoTotal > playerOneTotal) {
+      console.log(this.playerTwo.name + " wins this round!");
+      this.playerTwo.score++;
+    }
+    else {
+      console.log("Wow! You managed to tie after each rolling " + this.dice.length + " dice!");
+    }
+  }*/
 
 
   gamesSetup() {
     //setup choose AI/Human for player one or two.  Putting names to the players.
     //put a prompt for the names.  Prompt for the types.  AI or Human.
-    this.playerOne = new AI();
-    this.playerTwo = new AI();
-    this.playerThree = new Human();
-    this.playerFour = new Human();
+    //this.playerOne = new Human("name");
+    //this.playerTwo = new ai(nameVariable);
 
-
+      //Guides:
+      //ask for names, ask for ai or human
+      //instantiate a new player of the asked for type based on user input
+      //you only need two players, assign this.playerOne and this.playerTwo
+      // put chooseName() in at gamesSetup().
+      
   }
 
   chooseName() {
 
     let choosePlayersOne = prompt("Do you want to want two humans to play? yes or no?");
 
-
-
-    let playerThree = prompt("Please enter your name as the first player.");
-    let playerFour = prompt("Please enter your name as the second player.");
-
-
-
     switch (choosePlayersOne) {
       case "yes":
-        console.log("Player One's Name: ", playerThree);
-        console.log("Player Two's Name: ", playerFour);
+        this.playerOne = prompt("Please enter your name as the first player.");
+        this.playerTwo = prompt("Please enter your name as the second player.");
+        console.log("Player One's Name: ", this.playerOne);
+        console.log("Player Two's Name: ", this.playerTwo);
         // this.playerThree
         break;
       case "no":
@@ -490,16 +481,16 @@ class Games {
         break;
 
     }
-    let choosePlayersThree = prompt("Do you want a human versus computer game? yes or no?");
+    let choosePlayersTwo = prompt("Do you want a human versus computer game? yes or no?");
 
-    let playerOne = "Kitt";
-    switch (choosePlayersThree) {
+    switch (choosePlayersTwo) {
       case "yes":
         //playerOne = new Human();
         //playerTwo = new AI();
-        let playerThree = prompt("Please enter your name as the first player.");
-        console.log("Player One's Name: ", playerThree);
-        console.log("The fast and furious Nightrider: ", playerOne);
+        this.playerOne = prompt("Please enter your name as the first player.");
+        this.playerTwo = "Kitt";
+        console.log("Player One's Name: ", this.playerOne);
+        console.log("The fast and furious Nightrider: ", this.playerTwo);
         break;
       case "no":
         //playerOne = new Human();
@@ -509,63 +500,14 @@ class Games {
         break;
     }
 
-    let choosePlayersTwo = prompt("Do you want to watch Kit and Hal to play? yes or no?");
-
-    switch (choosePlayersTwo) {
-      case "yes":
-        let playerOne = "Kitt";
-        let playerTwo = "Hal";
-        console.log("Nightrider's ", playerOne);
-        console.log("2001 Space's Indomitable Compter: ", playerTwo);
-        break;
-      case "no":
-        break;
-      default:
-        break;
-    }
-
-
-
-
   }
 
-
-
-
-
 }
-
-
-
-
-
-
-
 
 
 
 let game = new Games();
 game.runGame();
 
-
-
-
-
-
-/* if(randomEvent = 1 === [heroes[0]]){
-    }
-    else if(randomEvent = 2 === [heroes[1]]){
-
-    }
-    else if(randomEvent = 3 === [heroes[2]]){
-
-    }
-    else if(randomEvent = 4 === [heroes[3]]){
-
-    }
-    else if(randomEvent = 5 === [heroes[4]]){
-
-    }
-    console.log([heroes]);*/
 
 
