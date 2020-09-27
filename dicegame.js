@@ -467,38 +467,41 @@ class Games {
 
     switch (choosePlayersOne) {
       case "yes":
-        this.playerOne = prompt("Please enter your name as the first player.");
-        this.playerTwo = prompt("Please enter your name as the second player.");
-        console.log("Player One's Name: ", this.playerOne);
-        console.log("Player Two's Name: ", this.playerTwo);
-        // this.playerThree
+        let playerOneName = prompt("Please enter your name as the first player.");
+        let playerTwoName = prompt("Please enter your name as the second player.");
+        this.playerOne = new Human(playerOneName);
+        this.playerTwo = new Human(playerTwoName);
+        console.log("Player One's Name: ", this.playerOne.name);
+        console.log("Player Two's Name: ", this.playerTwo.name);
+      
         break;
       case "no":
+        let choosePlayersTwo = prompt("Do you want a human versus computer game? yes or no?");
 
+          switch (choosePlayersTwo) {
+            case "yes":
+              //playerOne = new Human();
+              //playerTwo = new AI();
+              let playerOneName = prompt("Please enter your name as the first player.");
+              this.playerOne = new Human(playerOneName);
+              this.playerTwo = new AI("Kitt");
+              console.log("Player One's Name: ", this.playerOne);
+              console.log("The fast and furious Nightrider: ", this.playerTwo);
+              break;
+            default:
+              this.chooseName();
 
-        break;
+              
+              
+              break;
+          }
+          break;
       default:
-        break;
+        this.chooseName();
+      break;
 
     }
-    let choosePlayersTwo = prompt("Do you want a human versus computer game? yes or no?");
-
-    switch (choosePlayersTwo) {
-      case "yes":
-        //playerOne = new Human();
-        //playerTwo = new AI();
-        this.playerOne = prompt("Please enter your name as the first player.");
-        this.playerTwo = "Kitt";
-        console.log("Player One's Name: ", this.playerOne);
-        console.log("The fast and furious Nightrider: ", this.playerTwo);
-        break;
-      case "no":
-        //playerOne = new Human();
-        //playerTwo = new Human();
-        break;
-      default:
-        break;
-    }
+    
 
   }
 
