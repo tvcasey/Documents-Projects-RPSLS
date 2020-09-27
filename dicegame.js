@@ -109,79 +109,10 @@ class Die {
 
 
 
-/*
-class Player {
-    constructor() {
-      //name, score, list of available gestures.
-      this.score = 0;
-      this.name = null;
-      this.gesture = null;
-
-    }
-    chooseGesture(){
-      console.log("error override this method");
-    }
-}
-class Human extends Player {
-      constructor() {
-      super();
-    
-  }
-  chooseGesture(){
-    //get user input to choose gesture
-    //store choice to this.gesture
-  }
-}
-
-class AI extends Player {
-      constructor() {
-      super();
-  
-  }
-
-
-  chooseGesture() {
-   
-
-  //use random/floor to choose gesture
-  // another method to choose name
-  
-  
-  
-  //chooseName()
-
-
-
-class Game {
-  constructor() {
-    this.playerOne = null;
-    this.playerTwo = null;
-
-
-  }
-  gameSetup() {
-    //setup choose AI/Human for player one or two.  Putting names to the players.
-    //put a prompt for the names.  Prompt for the types.  AI or Human.
 
 
  
 
-
-
-  
-  
-
-
-
-
-  
- // function choice(cities)
- // {
- // return cities[Math.floor(Math.random() * cities.length)];
-     
- // }
- //    let cities = ["Paris", "London", "Rome", "Berlin", "Madrid", "Athens", "Budapest", "Moscow", "Zurich"];
- //     console.log(choice(cities));
 
 
 
@@ -277,16 +208,6 @@ class AI extends Player {
     this.gesture = heroes[randomEvent];
   }
 
-  rulesOfTheGame() {
-
-    console.log("Will this print and if it doesn't why isn't displaying on the console?");
-  }
-
-  // another method to choose name
-
-
-
-
 }
 
 class Games {
@@ -297,7 +218,6 @@ class Games {
   runGame() {
     //primary workflow.  Game setup and make a loop after set up the game make the logic to run the game.
     //player roles and create a comparison class.
-    console.log("Hello World!");
     this.gamesSetup();
     this.chooseName();
     do{
@@ -305,28 +225,13 @@ class Games {
     this.playerTwo.chooseGesture();
     this.compareGestures();
     }
-    while (this.playerOne.score < 3 || this.playerTwo.score < 3); 
+    while (this.playerOne.score < 3 || this.playerTwo.score < 3){
 
+    }
+     
     this.determineWinner();
   }
   compareGestures() {
-
-    //    let fluffy = [];
-    //let counterPlayerOne = 0;
-    //    fluffy += counterPlayerOne;
-    //    let furry = [];
-    //let counterPlayerTwo = 0;
-    //    furry += counterPlayerTwo;
-    //this.score = [];
-
-    //    while(this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture + this.playerOne.gesture && counterPlayerOne === 3 || counterPlayerTwo === 3){
-
-    
-
-
-    //    }
-
-
 
     if (this.playerOne.gesture == "Rock" && this.playerTwo.gesture == "Scissors") {
       console.log("Player one has won this round.", this.playerOne.score++);
@@ -375,90 +280,26 @@ class Games {
 
     }
 
-
-    //    let counterPlayerOne = this.playerOne.score;
-    //    let counterPlayerTwo = this.playerTwo.score;
-
-
-    //    counterPlayerOne = this.playerOne.score;
-    //    counterPlayerTwo = this.playerTwo.score;
-
-    //   console.log(this.playerOne.score);
-    //   console.log(this.playerTwo.score);
-
-
-
-
-
-
-
-
-
-
   }
-
-
-
-
-
-
 
   determineWinner() {
 
     if(this.playerOne.score > this.playerTwo.score){
       console.log("PLAYER ONE WINS THE MATCH.");
-    } else if(this.playerTwo.score > this.playerTwo.score) {
+    } else if(this.playerTwo.score > this.playerOne.score) {
       console.log("PLAYER TWO WINS THE MATCH.");
     } else if(this.playerOne.score === this.playerTwo.score){
       console.log("GAME TIED, PLEASE REFRESH AND TRY AGAIN.");
     }
     }
   
-
-
-
-
-
-
-
-
-  //  while(this.playerOne.gesture < 3 && this.playerTwo.score < 3) {
-
-
-  //    }
-
-
-
-  /*while (this.playerOne.score < 3 && this.playerTwo.score < 3) {
-    let playerOneTotal = this.playerOne.rollAllDice(this.dice);
-    let playerTwoTotal = this.playerTwo.rollAllDice(this.dice);
-
-    if (playerOneTotal > playerTwoTotal) {
-      console.log(this.playerOne.name + " wins this round!");
-      this.playerOne.score++;
-    }
-    else if (playerTwoTotal > playerOneTotal) {
-      console.log(this.playerTwo.name + " wins this round!");
-      this.playerTwo.score++;
-    }
-    else {
-      console.log("Wow! You managed to tie after each rolling " + this.dice.length + " dice!");
-    }
-  }*/
-
-
   gamesSetup() {
-    //setup choose AI/Human for player one or two.  Putting names to the players.
-    //put a prompt for the names.  Prompt for the types.  AI or Human.
-    //this.playerOne = new Human("name");
-    //this.playerTwo = new ai(nameVariable);
 
-      //Guides:
-      //ask for names, ask for ai or human
-      //instantiate a new player of the asked for type based on user input
-      //you only need two players, assign this.playerOne and this.playerTwo
-      // put chooseName() in at gamesSetup().
-      
+
+    console.log("Welcome to RPSLS and get ready to gesture.  Hit refresh to see.");
+    console.log("Watch as two opponents battle it out toward ultimate victory of 3 of 5.");
+    console.log("There may be ties, so be ready to refresh for another bunch of gesture battles.")
+    
   }
 
   chooseName() {
@@ -471,8 +312,8 @@ class Games {
         let playerTwoName = prompt("Please enter your name as the second player.");
         this.playerOne = new Human(playerOneName);
         this.playerTwo = new Human(playerTwoName);
-        console.log("Player One's Name: ", this.playerOne.name);
-        console.log("Player Two's Name: ", this.playerTwo.name);
+        console.log("Player One's Name: ", playerOneName);
+        console.log("Player Two's Name: ", playerTwoName);
       
         break;
       case "no":
@@ -485,20 +326,17 @@ class Games {
               let playerOneName = prompt("Please enter your name as the first player.");
               this.playerOne = new Human(playerOneName);
               this.playerTwo = new AI("Kitt");
-              console.log("Player One's Name: ", this.playerOne);
-              console.log("The fast and furious Nightrider: ", this.playerTwo);
+              console.log("Player One's Name: ", playerOneName);
+              console.log("The fast and furious Nightrider: ", "Kitt");
               break;
             default:
               this.chooseName();
-
-              
-              
               break;
-          }
+            }
           break;
-      default:
+        default:
         this.chooseName();
-      break;
+        break;
 
     }
     
